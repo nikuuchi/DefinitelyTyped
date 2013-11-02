@@ -68,7 +68,7 @@ interface inAnim {
 interface SnapElement {
     add(el: SnapElement): SnapElement;
     after(el: SnapElement): SnapElement;
-    animate(attrs: any, duration: number, easing?: any, callback?: any);
+    animate(attrs: any, duration: number, easing?: any, callback?: any): void;
     append(el: SnapElement): SnapElement;
     asPX(attr: string, value?: string): SnapElement;
     attr(params: any): SnapElement;
@@ -147,10 +147,10 @@ interface Matrix {
     clone(): Matrix;
     invert(): Matrix;
     rotate(a: number, x: number, y: number): Matrix;
-    scale(x: number, y?: number, cx?: number, cy?: number);
+    scale(x: number, y?: number, cx?: number, cy?: number): void;
     split(): MatrixSplit;
     toTransformString(): Matrix;
-    translate(x: number, y: number);
+    translate(x: number, y: number):void;
     x(x: number, y: number): number;
     y(x: number, y: number): number;
 }
@@ -282,7 +282,7 @@ interface Snap {
     hsl(h: number, s: number, l: number): string;
     hsl2rgb(h: number, s: number, l: number): SnapRGBColor;
     is(o: any, type: string): boolean;
-    load(url: string, callback: any, scope?: any);
+    load(url: string, callback: any, scope?: any): void;
     parse(svg: string): Fragment;
     parsePathString(pathString: string): any[];
     parsePathString(pathString: string[]): any[];
